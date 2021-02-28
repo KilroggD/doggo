@@ -9,6 +9,7 @@ const List = ({addToFavorites, dogs, favorites, isLoading}) => {
     const params = useParams([]);
 
     const items = useMemo(() => {
+        // computed value to pick all or favorites
         if (params[0] === FAVOURITES_KEY) {
             return favorites;        
         }

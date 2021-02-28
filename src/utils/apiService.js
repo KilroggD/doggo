@@ -32,7 +32,6 @@ class ApiService {
     /**
      * Throw common error on not successful status
      * @param {object} response
-     * @param {bool} auth - check for unauth error or not
      */
     handleCommonError(response) {
         if (![200, 201, 204].includes(response.status)) {

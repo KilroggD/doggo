@@ -6,7 +6,6 @@ import {
     Redirect,
 } from "react-router-dom";
 
-
 import apiService from './utils/apiService';
 import Control from './components/Control';
 import List from './components/List';
@@ -20,18 +19,19 @@ const App = () => {
     const [dogs, setDogs] = useState([]);
     const [favorites, setFavorites] = useState([]);
 
-    const addToFavorites = useCallback((url) => {
-        const newFavs = [url, ...favorites];
-        setFavorites(newFavs);
-        storageService.set(FAVOURITES_KEY, newFavs);
+    const addToFavorites = useCallback((url) => {        
+        setFavorites([url, ...favorites]);
+        storageService.delete(FAVOURITES_KEY);
     }, [setFavorites, favorites]);
 
     const resetFavorites = useCallback(() => {
+        // remove favorites from state and local storage
         storageService.set(FAVOURITES_KEY, []);
         setFavorites([]);        
     }, [setFavorites]);
 
     const fetchDogs = useCallback(async () => {
+        // fetch dog images
         const promises = [];
         for (let i = 0; i < COUNT; i++) {
             promises.push(apiService.getDogPicture());

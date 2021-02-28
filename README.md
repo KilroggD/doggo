@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Favourite dogs app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Tech stack - React JS (with hooks), React Router, CSS, Native fetch for API calls
 
 To run it just pull the repo and run (node and npm should be installed):
 
@@ -15,6 +17,7 @@ Main features:
 - Refresh button to reload images and go back home
 - Code to check if img is a video (webm or mp4) and render video element instead
 - Flexbox layout used
+- Proxy param in package.json to avoid CORS errors
 
 Possible improvements for real prod code:
 - Add proptypes validation (or use typescript)

@@ -3,6 +3,9 @@ import { Link, useHistory, useLocation } from 'react-router-dom'
 
 import { FAVOURITES_KEY } from '../constants';
 
+/**
+ * Control panel for links and buttons
+ */
 const Control = ({isFavVisible, refreshDogs, onFavsResetClick}) => {
     const history = useHistory();
     const location = useLocation([]);
